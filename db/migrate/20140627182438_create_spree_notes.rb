@@ -5,7 +5,7 @@ class CreateSpreeNotes < ActiveRecord::Migration
       t.column :body, :text
       t.column :important, :boolean, default: false
       t.column :author, :string
-      t.timestamps
+      t.timestamps null: true
     end
   end
 end
