@@ -1,7 +1,6 @@
 @import 'spree/backend/globals/functions';
 @import 'spree/backend/globals/variables_override';
 @import 'spree/backend/globals/variables';
-@import 'spree/backend/globals/mixins';
 
 .important-notes-banner{
   .important-notes-banner-inner{
@@ -9,7 +8,7 @@
     padding: 7px;
     border: 1px solid $color-action-void-brd;
     background-color: $color-action-void-bg;
-    @include border-radius(3px);
+    border-radius: 3px;
     color: $color-error;
   }
 }
@@ -20,7 +19,7 @@
   float: left;
   margin-bottom: 15px;
   border: 1px solid $color-border;
-  @include border-radius(3px);
+  border-radius: 3px;
 
   .note-icon{
     float: left;
