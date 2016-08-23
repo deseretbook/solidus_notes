@@ -1,4 +1,4 @@
-Spree Notes
+Solidus Notes
 ================
 
 Installation
@@ -6,12 +6,12 @@ Installation
 
 Add to `Gemfile`:
 
-    gem 'spree_notes', :git => 'git://github.com/railsdog/spree_notes.git'
+    gem 'solidus_notes', :git => 'git://github.com/deseretbook/solidus_notes.git'
 
 Run:
 
     $ bundle
-    $ bundle exec rails g spree_notes:install
+    $ bundle exec rails g solidus_notes:install
 
 Development
 -----------

@@ -1,10 +1,17 @@
 source 'https://rubygems.org'
 
-spree_branch = "2-2-stable"
-gem 'spree_core', github: 'spree/spree', branch: spree_branch
-gem 'spree_backend', github: 'spree/spree', branch: spree_branch
-gem 'spree_api', github: 'spree/spree', branch: spree_branch
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: spree_branch
-gem 'spree_i18n', github: 'spree/spree_i18n', branch: spree_branch
+gem 'therubyracer', group: :development
+
+gem 'solidus', '~> 1.3.0'
+gem 'solidus_auth_devise'
+gem 'solidus_backend'
+gem 'solidus_api'
+gem 'solidus_i18n'
+
+group :development, :test do
+  # Call `binding.pry` anywhere in the code to stop execution and get a debugger console.
+  gem 'byebug'
+  gem 'pry-byebug'
+end
 
 gemspec
