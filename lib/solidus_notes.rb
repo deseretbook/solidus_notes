@@ -1,11 +1,10 @@
-require 'spree_backend'
-require 'spree_core'
+require 'solidus_backend'
+require 'solidus_core'
 
-module SpreeNotes
+module SolidusNotes
   class Engine < Rails::Engine
-    require 'spree/core'
     isolate_namespace Spree
-    engine_name 'spree_notes'
+    engine_name 'solidus_notes'
 
     def self.activate
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
