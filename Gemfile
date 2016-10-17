@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'therubyracer', group: :development
 
-gem 'solidus', '~> 1.3.0'
+gem 'solidus', '~> 1.4.0'
 gem 'solidus_auth_devise'
 gem 'solidus_backend'
 gem 'solidus_api'
