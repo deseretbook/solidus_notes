@@ -1,5 +1,5 @@
 Spree::Admin::UsersController.class_eval do
-  append_before_filter :load_user_orders, only: :edit
+  append_before_action :load_user_orders, only: :edit
 
   private
 

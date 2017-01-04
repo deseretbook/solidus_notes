@@ -1,6 +1,6 @@
 class Spree::Admin::NotesController < Spree::Admin::BaseController
 
-  before_filter :load_noteable
+  before_action :load_noteable
 
   def create
     @note = Spree::Note.new(note_params)
@@ -9,7 +9,7 @@ class Spree::Admin::NotesController < Spree::Admin::BaseController
     @note.save
 
     flash[:success] = "Note Saved"
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 
   protected

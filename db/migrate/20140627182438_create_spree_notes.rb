@@ -1,4 +1,4 @@
-class CreateSpreeNotes < ActiveRecord::Migration
+class CreateSpreeNotes < ActiveRecord::Migration[4.2]
   def change
     create_table :spree_notes do |t|
       t.references :noteable, polymorphic: true, index: true
