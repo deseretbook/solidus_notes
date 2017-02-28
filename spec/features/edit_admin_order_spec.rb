@@ -1,5 +1,5 @@
 describe 'notes on edit admin order page', type: :feature do
-  before(:each) do 
+  before(:each) do
     admin_user = create(:admin_user)
     stub_admin_login!(admin_user)
   end
@@ -17,7 +17,7 @@ describe 'notes on edit admin order page', type: :feature do
 
     it 'shows the create note form after clicking the create note button' do
       within_fieldset 'admin_order_edit_notes' do
-        click_button 'Create New Note'
+        find("button", text: "Create New Note").trigger('click') #'Create New Note'
       end
       expect(find('.js-create-note-form', visible: false).visible?).to be true
     end
@@ -25,9 +25,9 @@ describe 'notes on edit admin order page', type: :feature do
     it 'can successfully create an unimportant note' do
       note_body = "This is a new note #{rand(10).to_s}"
       within_fieldset 'admin_order_edit_notes' do
-        click_button 'Create New Note'
+        find("button", text: "Create New Note").trigger('click') #'Create New Note'
         fill_in 'Note', with: note_body
-        click_button 'Save order note'
+        find("button", text: "Save order note").trigger('click') #'Save order note'
       end
       assert_flash_success 'Note Saved'
       expect(find('.note:not(.important) .note-content')).to have_text note_body
@@ -36,10 +36,10 @@ describe 'notes on edit admin order page', type: :feature do
     it 'can successfully create an important note' do
       note_body = "This is a new note #{rand(10).to_s}"
       within_fieldset 'admin_order_edit_notes' do
-        click_button 'Create New Note'
+        find("button", text: "Create New Note").trigger('click') #'Create New Note'
         fill_in 'Note', with: note_body
-        check 'note_important'
-        click_button 'Save order note'
+        find("label", text: "Important - Check to mark this note as important").trigger('click')#check 'note_important'
+        find("button", text: "Save order note").trigger('click') #'Save order note'
       end
       assert_flash_success 'Note Saved'
       expect(find('.note.important .note-content')).to have_text note_body
