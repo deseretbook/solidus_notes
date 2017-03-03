@@ -1,7 +1,7 @@
 module AuthenticationHelpers
   def stub_admin_login!(user)
-    Spree::Admin::BaseController.any_instance.stub(:spree_current_user).and_return(user)
-    Spree::Admin::BaseController.any_instance.stub(:current_spree_user).and_return(user)
+    allow_any_instance_of(Spree::Admin::BaseController).to receive(:spree_current_user).and_return(user)
+    allow_any_instance_of(Spree::Admin::BaseController).to receive(:current_spree_user).and_return(user)
   end
 end
 
