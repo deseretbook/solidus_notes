@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_notes'
-  s.version     = '2.0.0'
+  s.version     = '2.1'
   s.summary     = 'Allows admins to add custom notes to orders and users'
   s.description = 'Allows admins to add custom notes to orders and users'
   s.required_ruby_version = '>= 2.2.2'
@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
   s.requirements << 'none'
 
   # s.has_rdoc = true
+
+  s.add_dependency "solidus", ['>= 1.0', '< 3']
 
   s.add_development_dependency 'factory_girl'
   s.add_development_dependency 'ffaker'

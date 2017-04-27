@@ -2,7 +2,10 @@ require 'bundler'
 Bundler::GemHelper.install_tasks
 Bundler.setup
 
+require 'rspec/core/rake_task'
 require 'spree/testing_support/common_rake'
+
+RSpec::Core::RakeTask.new
 
 desc "Default Task"
 task :default => [:spec]
