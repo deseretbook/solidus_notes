@@ -23,7 +23,7 @@ describe 'notes on edit admin order page', type: :feature do
     end
 
     xit 'can successfully create an unimportant note' do
-      note_body = "This is a new note #{rand(10).to_s}"
+      note_body = "This is a new note #{rand(10)}"
       within_fieldset 'admin_order_edit_notes' do
         click_button 'Create New Note'
         fill_in 'Note', with: note_body
@@ -34,7 +34,7 @@ describe 'notes on edit admin order page', type: :feature do
     end
 
     xit 'can successfully create an important note' do
-      note_body = "This is a new note #{rand(10).to_s}"
+      note_body = "This is a new note #{rand(10)}"
       within_fieldset 'admin_order_edit_notes' do
         click_button 'Create New Note'
         fill_in 'Note', with: note_body

@@ -7,11 +7,11 @@ branch = ENV.fetch('SOLIDUS_BRANCH', 'v2.1')
 gem 'solidus', github: 'solidusio/solidus', branch: branch
 gem 'solidus_auth_devise', '~> 1.0'
 
-if branch == "master" || branch >= "v2.0"
-  gem "rails-controller-testing", group: :test
+if branch == 'master' || branch >= 'v2.0'
+  gem 'rails-controller-testing', group: :test
 else
-  gem "rails", "~> 4.2"
-  gem "rails_test_params_backport", group: :test
+  gem 'rails', '~> 4.2'
+  gem 'rails_test_params_backport', group: :test
 end
 
 # Specify which solidus_i18n and master branch to allow us to use solidus 2.0

@@ -1,7 +1,7 @@
 # Configure Rails Environment
 ENV['RAILS_ENV'] = 'test'
 
-require File.expand_path('../dummy/config/environment.rb',  __FILE__)
+require File.expand_path('../dummy/config/environment.rb', __FILE__)
 
 require 'rspec/rails'
 require 'database_cleaner'
@@ -17,14 +17,14 @@ require 'spree/testing_support/authorization_helpers'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
-Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each { |f| require f }
+Dir[File.join(File.dirname(__FILE__), 'support/**/*.rb')].each {|f| require f }
 
 # And require any additional factories defined in this project
-Dir[File.join(File.dirname(__FILE__), 'factories/**/*.rb')].each { |f| require f }
+Dir[File.join(File.dirname(__FILE__), 'factories/**/*.rb')].each {|f| require f }
 
 # Configure poltergeist for javascript testing
 Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, { js_errors: false })
+  Capybara::Poltergeist::Driver.new(app, js_errors: false)
 end
 Capybara.javascript_driver = :poltergeist
 

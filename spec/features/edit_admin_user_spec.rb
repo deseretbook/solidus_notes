@@ -1,5 +1,5 @@
 describe 'notes on edit admin user page', type: :feature do
-  before(:each) do 
+  before(:each) do
     admin_user = create(:admin_user)
     stub_admin_login!(admin_user)
   end
@@ -23,7 +23,7 @@ describe 'notes on edit admin user page', type: :feature do
     end
 
     it 'can successfully create an unimportant note' do
-      note_body = "This is a new note #{rand(10).to_s}"
+      note_body = "This is a new note #{rand(10)}"
       within_fieldset 'admin_user_edit_notes' do
         click_button 'Create New Note'
         fill_in 'Note', with: note_body
@@ -34,7 +34,7 @@ describe 'notes on edit admin user page', type: :feature do
     end
 
     it 'can successfully create an important note' do
-      note_body = "This is a new note #{rand(10).to_s}"
+      note_body = "This is a new note #{rand(10)}"
       within_fieldset 'admin_user_edit_notes' do
         click_button 'Create New Note'
         fill_in 'Note', with: note_body
@@ -114,7 +114,7 @@ describe 'notes on edit admin user page', type: :feature do
     context 'with important notes on orders' do
       let(:user) do
         user = create(:user)
-        3.times { order = create(:order_with_notes, user: user) }
+        3.times { create(:order_with_notes, user: user) }
         user
       end
 

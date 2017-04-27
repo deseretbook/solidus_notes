@@ -7,10 +7,10 @@ require 'spree/testing_support/common_rake'
 
 RSpec::Core::RakeTask.new
 
-desc "Default Task"
-task :default => [:spec]
+desc 'Default Task'
+task default: [:spec]
 
-desc "Generates a dummy app for testing"
+desc 'Generates a dummy app for testing'
 task :test_app do
   ENV['LIB_NAME'] = 'solidus_notes'
   Rake::Task['common:test_app'].invoke
