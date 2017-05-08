@@ -1,6 +1,6 @@
 class Spree::Note < ActiveRecord::Base
   belongs_to :noteable, polymorphic: true
-  validates_presence_of :author
+  validates :author, presence: true
   default_scope { order(important: :desc, created_at: :desc) }
 
   def self.important

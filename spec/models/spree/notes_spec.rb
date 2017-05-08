@@ -16,7 +16,7 @@ describe Spree::Note do
   context 'creating a note' do
     it 'fails if there is no author specified' do
       note = Spree::Note.new
-      expect{ note.save! }.to raise_error ActiveRecord::RecordInvalid
+      expect { note.save! }.to raise_error ActiveRecord::RecordInvalid
     end
 
     it 'succeeds if there is an author specified' do
@@ -27,8 +27,8 @@ describe Spree::Note do
 
   context 'class methods' do
     before(:each) do
-      3.times { |i| create(:note, created_at: Time.now - i.days) }
-      4.times { |i| create(:important_note, created_at: Time.now + i.days) }
+      3.times {|i| create(:note, created_at: Time.current - i.days) }
+      4.times {|i| create(:important_note, created_at: Time.current + i.days) }
     end
 
     it '.important scope returns only important notes' do
