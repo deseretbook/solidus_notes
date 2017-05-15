@@ -5,12 +5,12 @@ gem 'therubyracer', group: :development
 branch = ENV.fetch('SOLIDUS_BRANCH', 'v2.1')
 
 gem 'solidus', github: 'solidusio/solidus', branch: branch
-gem 'solidus_auth_devise', '~> 1.0'
+gem 'solidus_auth_devise'
 
 if branch == 'master' || branch >= 'v2.0'
   gem 'rails-controller-testing', group: :test
 else
-  gem 'rails', '~> 4.2'
+  gem 'rails'
   gem 'rails_test_params_backport', group: :test
 end
 
