@@ -1,4 +1,4 @@
-class Spree::Note < ActiveRecord::Base
+class Spree::Note < Spree::Base
   belongs_to :noteable, polymorphic: true
   validates :author, presence: true
   default_scope { order(important: :desc, created_at: :desc) }

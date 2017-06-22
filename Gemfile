@@ -5,7 +5,7 @@ gem 'therubyracer', group: :development
 branch = ENV.fetch('SOLIDUS_BRANCH', 'v2.1')
 
 gem 'solidus', github: 'solidusio/solidus', branch: branch
-gem 'solidus_auth_devise'
+# gem 'solidus_auth_devise'
 
 if branch == 'master' || branch >= 'v2.0'
   gem 'rails-controller-testing', group: :test

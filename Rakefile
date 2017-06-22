@@ -1,17 +1,21 @@
 require 'bundler'
 Bundler::GemHelper.install_tasks
-Bundler.setup
 
 require 'rspec/core/rake_task'
-require 'spree/testing_support/common_rake'
+require 'spree/testing_support/extension_rake'
 
 RSpec::Core::RakeTask.new
 
-desc 'Default Task'
-task default: [:spec]
+task :default do
+  if Dir["spec/dummy"].empty?
+    Rake::Task[:test_app].invoke
+    Dir.chdir("../../")
+  end
+  Rake::Task[:spec].invoke
+end
 
 desc 'Generates a dummy app for testing'
 task :test_app do
   ENV['LIB_NAME'] = 'solidus_notes'
-  Rake::Task['common:test_app'].invoke
+  Rake::Task['extension:test_app'].invoke
 end
