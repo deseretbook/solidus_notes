@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'therubyracer', group: :development
 
-branch = ENV.fetch('SOLIDUS_BRANCH', 'v2.2')
+branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
 
 gem 'solidus', github: 'solidusio/solidus', branch: branch
 gem 'solidus_auth_devise', '~> 1.0'
