@@ -38,7 +38,9 @@ describe 'notes on edit admin user page', type: :feature do
       within_fieldset 'admin_user_edit_notes' do
         click_button 'Create New Note'
         fill_in 'Note', with: note_body
-        check 'note_important'
+        # Should use `check 'note_important'` in place of `find` below, but
+        # poltergeist insists the input is being obscured by <h5.sidebar-title>.
+        find('input#note_important').trigger('click')
         click_button 'Save user note'
       end
       assert_flash_success 'Note Saved'
