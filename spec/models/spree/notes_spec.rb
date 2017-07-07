@@ -27,8 +27,8 @@ describe Spree::Note do
 
   context 'class methods' do
     before(:each) do
-      3.times {|i| create(:note, created_at: Time.current - i.days) }
-      4.times {|i| create(:important_note, created_at: Time.current + i.days) }
+      3.times { |i| create(:note, created_at: Time.current - i.days) }
+      4.times { |i| create(:important_note, created_at: Time.current + i.days) }
     end
 
     it '.important scope returns only important notes' do
