@@ -19,7 +19,7 @@ class Spree::Admin::NotesController < Spree::Admin::BaseController
 
   def load_noteable
     allowed_noteables = %w[user order]
-    which = params.keys.map {|k| k.split('_').first }.find do |key|
+    which = params.keys.map { |k| k.split('_').first }.find do |key|
       allowed_noteables.include? key
     end
     @noteable_klass = if which == 'user'
