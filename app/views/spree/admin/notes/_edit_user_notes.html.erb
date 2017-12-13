@@ -12,7 +12,7 @@
       <%= form_for @user.notes.build, url: admin_user_notes_path(@user), :method => :post do |f| %>
         <%= render partial: 'spree/admin/notes/notes_form', locals: {f: f} %>
         <div class="form-buttons filter-actions actions">
-          <%= button 'Save user note' %>
+          <%= submit_tag "Save user note" %>
         </div>
       <% end %>
     </div>
