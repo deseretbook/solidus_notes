@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :order_with_notes, parent: :order do
     after(:create) do |order|
       3.times { create(:note, noteable: order) }
