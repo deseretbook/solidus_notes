@@ -1,6 +1,8 @@
 Spree::Admin::UsersController.class_eval do
   append_before_action :load_user_orders, only: :edit
 
+  def edit; end
+
   private
 
   # Private: loads notes for the current user's orders with its parent order.
