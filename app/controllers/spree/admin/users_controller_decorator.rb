@@ -1,7 +1,9 @@
 Spree::Admin::UsersController.class_eval do
   append_before_action :load_user_orders, only: :edit
 
-  def edit; end
+  def edit
+    super
+  end
 
   private
 
