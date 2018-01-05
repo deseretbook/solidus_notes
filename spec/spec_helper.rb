@@ -29,7 +29,7 @@ end
 Capybara.javascript_driver = :poltergeist
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
   config.include Spree::TestingSupport::Flash
 
   config.use_transactional_fixtures = false
