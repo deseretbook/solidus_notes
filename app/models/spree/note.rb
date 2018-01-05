@@ -1,5 +1,5 @@
 class Spree::Note < Spree::Base
-  belongs_to :noteable, inverse_of: :notes, polymorphic: true
+  belongs_to :noteable, polymorphic: true
   validates :author, presence: true
   default_scope { order(important: :desc, created_at: :desc) }
 
