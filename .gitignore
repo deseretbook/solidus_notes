@@ -1,6 +1,7 @@
 *.swp
 .DS_Store
 .rvmrc
+.byebug_history
 Gemfile.lock
 pkg
 spec/dummy
