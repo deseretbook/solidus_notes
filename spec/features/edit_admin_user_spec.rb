@@ -134,8 +134,8 @@ describe 'notes on edit admin user page', type: :feature do
         expect(notes_on_page.size).to eq Spree::Note.not_important.count
       end
 
-      it 'shows the important notes exist banner' do
-        expect(find('.important-notes-banner')).to have_link '', href: '#important_notes'
+      it 'does not show the important notes exist banner' do
+        expect(page).not_to have_selector('.important-notes-banner')
       end
     end
 
