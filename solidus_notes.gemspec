@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'solidus_notes'
-  s.version     = '2.4.0'
+  s.version     = '2.5.0'
   s.summary     = 'Allows admins to add custom notes to orders and users'
   s.description = 'Allows admins to add custom notes to orders and users'
 
